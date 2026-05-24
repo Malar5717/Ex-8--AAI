@@ -1,7 +1,6 @@
- <H3>ENTER YOUR NAME</H3>
-<H3>ENTER YOUR REGISTER NO.</H3>
+ <H3>ENTER YOUR NAME: Malar Mariam S</H3>
+<H3>ENTER YOUR REGISTER NO: 212223230118</H3>
 <H3>EX. NO.8</H3>
-<H3>DATE:</H3>
 <H1 ALIGN =CENTER>Implementation of Speech Recognition</H1>
 <H3>Aim:</H3> 
  To implement the conversion of live speech to text.<BR>
@@ -22,9 +21,24 @@ Step 11: Perform speech recognition with exceptional handling:<Br>
 •	A generic exception block captures any other unexpected errors.<Br>
 <H3>Program:</H3>
 
-Insert your code her
+```python
+import speech_recognition as sr
+
+r = sr.Recognizer()
+
+with sr.AudioFile("/content/Recording.wav") as source:
+    audio_data = r.record(source)
+
+try:
+    text = r.recognize_google(audio_data)
+    print("You said:", text)
+except Exception as e:
+    print("Error:", e)
+```
 
 <H3> Output:</H3>
-Show the results here
+<img width="419" height="39" alt="image" src="https://github.com/user-attachments/assets/f8b98147-1318-4634-b432-37494ee29e48" />
+
 
 <H3> Result:</H3>
+Thus, we have implemented a program that will transcribe the audio file in the file variable and print the transcribed text on the console, one line at a time.
